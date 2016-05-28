@@ -18,7 +18,9 @@ var indexRoutes         = require("./routes/index"),
 
 
 // seedDB(); //seed the database
-mongoose.connect(process.env.DATABASEURL);
+var dburl = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
+mongoose.connect(dburl);
+//mongoose.connect(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost/yelp_camp_v10");
 // mongoose.connect("mongodb://arun:arun@ds017193.mlab.com:17193/arunsai0310");
 
